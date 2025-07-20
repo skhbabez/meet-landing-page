@@ -3,14 +3,14 @@
   font-style: normal;
   font-weight: 500;
   src: local("Red Hat Display"),
-    url("fonts/RedHatDisplay-Medium.ttf") format(truetype);
+    url("fonts/RedHatDisplay-Medium.ttf") format("truetype");
 }
 @font-face {
   font-family: "Red Hat Display";
   font-style: normal;
   font-weight: 900;
   src: local("Red Hat Display"),
-    url("fonts/RedHatDisplay-Black.ttf") format(truetype);
+    url("fonts/RedHatDisplay-Black.ttf") format("truetype");
 }
 
 *,
@@ -23,6 +23,11 @@
 
 html {
   font-size: 62.5%;
+}
+
+img {
+  display: block;
+  max-inline-size: 100%;
 }
 
 :root {
@@ -41,6 +46,7 @@ html {
   --space-900: 7.2rem;
   --space-800: 6.4rem;
   --space-700: 5.6rem;
+  --space-600: 4.8rem;
   --space-500: 4rem;
   --space-400: 3.2rem;
   --space-300: 2.4rem;
@@ -52,9 +58,8 @@ html {
   --font-1: 1.6rem;
   --font-2: 3.2rem;
   --font-3: 4rem;
-  --flow: var(--space-300);
+  --font-4: 4.8rem;
   --corner-radius: 2.9rem;
-  /* We make them responsive after finishing each screen view*/
 }
 
 body {
@@ -63,10 +68,27 @@ body {
   line-height: 1.5;
 }
 
+h1 {
+  font-size: var(--font-4);
+}
+
 h2 {
-  font-size: var(3.2rem);
+  font-size: 3.2rem;
+  color: var(--slate-900);
+}
+
+h1,
+h2 {
   line-height: 1.1;
   font-weight: 900;
+}
+
+nav {
+  padding-block-start: var(--space-600);
+}
+
+button + button {
+  margin-inline-start: 1.7rem;
 }
 
 footer .number {
@@ -82,22 +104,61 @@ footer .number {
   text-align: center;
   background-color: var(--cyan-600);
   background-blend-mode: soft-light;
-  background-size: 100%;
+  background-size: cover;
+  background-repeat: no-repeat;
+  color: var(--white);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: var(--space-300);
+}
+
+.call-to-action h2 {
   color: var(--white);
 }
 
-.flow > * + * {
-  margin-block-start: var(--flow, 1em);
+header {
+  overflow-x: hidden;
 }
 
-.color-purple-300 {
-  color: var(--purple-300);
+.hero {
+  display: grid;
+  justify-items: center;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 1fr 1fr;
+  row-gap: var(--space-600);
+  column-gap: 1.7rem;
+  grid-template-areas:
+    "img1 img2"
+    "sec1 sec1";
 }
 
-.color-cyan-300 {
-  color: var(--cyan-300);
+.hero section {
+  max-inline-size: 44.83rem;
+  grid-area: sec1;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: var(--space-300);
 }
 
+.hero img {
+  position: sticky;
+  min-inline-size: 20.805rem;
+}
+
+.hero img:first-of-type {
+  grid-area: img1;
+}
+
+.hero img:last-of-type {
+  grid-area: img2;
+}
+
+/*components*/
 .btn {
   border-radius: var(--corner-radius);
   padding-inline: var(--space-500);
@@ -143,4 +204,18 @@ footer .number {
   position: absolute;
   border-inline-start: var(--slate-300) solid 0.1rem;
   top: -8rem;
+}
+
+/*utilities*/
+
+.color-purple-300 {
+  color: var(--purple-300);
+}
+
+.color-cyan-300 {
+  color: var(--cyan-300);
+}
+
+.color-slate-600 {
+  color: var(--slate-600);
 }
