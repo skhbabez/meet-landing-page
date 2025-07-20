@@ -69,7 +69,13 @@ h2 {
   font-weight: 900;
 }
 
-footer {
+footer .number {
+  left: 50%;
+  transform: translateX(-50%);
+  top: 2.8rem;
+}
+
+.call-to-action {
   background-image: url("assets/mobile/image-footer.jpg");
   padding-inline: var(--space-400);
   padding-block: var(--space-800);
@@ -77,23 +83,17 @@ footer {
   background-color: var(--cyan-600);
   background-blend-mode: soft-light;
   background-size: 100%;
+  color: var(--white);
 }
 
 .flow > * + * {
   margin-block-start: var(--flow, 1em);
 }
 
-.color-white {
-  color: var(--white);
-}
-
 .color-purple-300 {
   color: var(--purple-300);
 }
 
-.color-slate-600 {
-  color: var(--slate-600);
-}
 .color-cyan-300 {
   color: var(--cyan-300);
 }
@@ -125,7 +125,7 @@ footer {
 .number {
   border-radius: 50%;
   aspect-ratio: 1;
-  width: 5.6rem;
+  inline-size: 5.6rem;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -133,12 +133,13 @@ footer {
   color: var(--slate-600);
   font-weight: 900;
   border: var(--slate-300) solid 0.1rem;
+  margin-block-start: 8rem;
   position: relative;
 }
 
 .number::before {
   content: "";
-  height: 8rem;
+  block-size: 8rem;
   position: absolute;
   border-inline-start: var(--slate-300) solid 0.1rem;
   top: -8rem;
