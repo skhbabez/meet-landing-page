@@ -118,3 +118,25 @@ footer {
   --btn-bg-color-hover: var(--purple-100);
   --btn-bg-color: var(--purple-600);
 }
+
+.number {
+  border-radius: 50%;
+  aspect-ratio: 1;
+  width: 5.6rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: var(--white);
+  color: var(--slate-600);
+  font-weight: 900;
+  border: var(--slate-300) solid 0.1rem;
+  position: relative;
+}
+
+.number::before {
+  content: "";
+  height: 8rem;
+  position: absolute;
+  border-inline-start: var(--slate-300) solid 0.1rem;
+  top: -8rem;
+}
