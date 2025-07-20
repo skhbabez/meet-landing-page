@@ -87,8 +87,12 @@ nav {
   padding-block-start: var(--space-600);
 }
 
-button + button {
-  margin-inline-start: 1.7rem;
+.btn-wrapper {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  justify-items: center;
+  gap: var(--space-200);
 }
 
 footer .number {
@@ -119,14 +123,19 @@ footer .number {
 }
 
 header {
-  overflow-x: hidden;
+  display: flex;
+  flex-direction: column;
+
+  align-items: center;
 }
 
 .hero {
+  padding-block: var(--space-800);
+  padding-inline: 32px;
   display: grid;
   justify-items: center;
-  grid-template-columns: 1fr 1fr;
-  grid-template-rows: 1fr 1fr;
+  grid-template-columns: repeat(2, 1fr);
+  overflow-x: visible;
   row-gap: var(--space-600);
   column-gap: 1.7rem;
   grid-template-areas:
@@ -135,19 +144,16 @@ header {
 }
 
 .hero section {
-  max-inline-size: 44.83rem;
   grid-area: sec1;
   text-align: center;
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: center;
   gap: var(--space-300);
 }
 
 .hero img {
-  position: sticky;
-  min-inline-size: 20.805rem;
+  min-inline-size: 208.05px;
 }
 
 .hero img:first-of-type {
