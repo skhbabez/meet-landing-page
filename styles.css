@@ -94,6 +94,9 @@ footer {
 .color-slate-600 {
   color: var(--slate-600);
 }
+.color-cyan-300 {
+  color: var(--cyan-300);
+}
 
 .btn {
   border-radius: var(--corner-radius);
