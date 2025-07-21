@@ -120,13 +120,13 @@ header {
 }
 
 .hero {
-  padding-block-start: var(--space-800);
-  padding-block-end: var(--space-400);
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  gap: var(--space-600);
+  gap: 48px;
+  padding-block-start: var(--space-800);
+  padding-block-end: var(--space-400);
 }
 
 .hero-body {
@@ -146,46 +146,39 @@ header {
   gap: var(--space-200);
 }
 
-.img-container {
-  width: 110%;
-}
-
-.img-container img {
-  margin-inline: auto;
-  min-block-size: 16rem;
-  height: auto;
-  object-fit: cover;
-}
-
-.desktop-image-right {
-  display: none;
+.hero::before {
+  content: "";
+  background: url("assets/tablet/image-hero.png") no-repeat center / contain;
+  width: 107%;
+  min-inline-size: 433px;
+  aspect-ratio: 820 / 303;
 }
 
 @media (min-width: 1240px) {
   .hero {
-    display: flex;
     flex-direction: row;
     justify-content: space-between;
     gap: var(--space-400);
   }
 
+  .hero::before {
+    content: url("assets/desktop/image-hero-left.png");
+    /* we need to reset the mobile before element*/
+    background: none;
+    width: auto;
+    min-inline-size: auto;
+    aspect-ratio: unset;
+    position: relative;
+    left: -2%;
+  }
+  .hero::after {
+    content: url("assets/desktop/image-hero-left.png");
+    position: relative;
+    right: -2%;
+  }
+
   .hero-body {
     min-inline-size: 40rem;
-  }
-
-  .desktop-image-right {
-    display: block;
-  }
-
-  .desktop-image-right img {
-    position: relative;
-    right: -15%;
-    display: block;
-  }
-
-  .desktop-image-left img {
-    position: relative;
-    left: -15%;
   }
 }
 
