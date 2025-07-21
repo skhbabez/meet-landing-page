@@ -21,10 +21,6 @@
   margin: 0;
 }
 
-html {
-  font-size: 62.5%;
-}
-
 img {
   display: block;
   max-inline-size: 100%;
@@ -59,14 +55,18 @@ img {
   --font-2: 3.2rem;
   --font-3: 4rem;
   --font-4: 4.8rem;
+  --fluid-40-64: clamp(2.5rem, 1.9718rem + 2.2535vw, 4rem);
+  --fluid-32-40: clamp(2rem, 1.8239rem + 0.7512vw, 2.5rem);
+  --fluid-16-18: clamp(1rem, 0.8571rem + 0.2976vw, 1.125rem);
+  --fluid-12-16: clamp(0.75rem, 0.662rem + 0.3756vw, 1rem);
+  --static-16: 1rem;
   --corner-radius: 2.9rem;
 }
 
 body {
   font-family: var(--font-base);
-  font-size: var(--font-1);
   line-height: 1.5;
-  color: var(--slate-600);
+
   text-align: center;
 }
 
@@ -76,17 +76,20 @@ main {
 }
 
 h1 {
-  font-size: var(--font-4);
+  font-size: var(--fluid-40-64);
   max-inline-size: 10ch;
 }
 
 h2 {
   max-inline-size: 19ch;
-  font-size: 3.2rem;
+  font-size: var(--fluid-32-40);
   color: var(--slate-900);
 }
+
 p {
+  font-size: var(--fluid-16-18);
   max-inline-size: 40ch;
+  color: var(--slate-600);
 }
 
 h1,
@@ -94,6 +97,12 @@ h2 {
   line-height: 1.1;
   font-weight: 900;
   color: var(--slate-900);
+}
+
+p,
+h1,
+h2 {
+  margin-inline: auto;
 }
 
 nav {
@@ -107,7 +116,7 @@ hgroup p {
   font-weight: 900;
   letter-spacing: 4px;
   line-height: 1.1;
-  font-size: 14px;
+  font-size: var(--fluid-12-16);
   text-transform: capitalize;
 }
 
@@ -224,7 +233,7 @@ footer .number {
   gap: var(--space-300);
 }
 
-.call-to-action h2 {
+.call-to-action :is(h2, p) {
   color: var(--white);
 }
 
@@ -237,6 +246,8 @@ footer .number {
   color: var(--white);
   border: none;
   transition: all 300ms ease-in-out;
+  font-size: var(--static-16);
+  line-height: 1.5;
 }
 
 .btn:hover {
