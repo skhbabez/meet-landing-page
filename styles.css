@@ -29,6 +29,7 @@ img {
 :root {
   --cream: #fafafa;
   --cyan-600: #4d96a9;
+  --cyan-600-transparent: rgba(77, 150, 168, 0.87);
   --cyan-300: #8fe3f9;
   --cyan-100: #71c0d4;
   --purple-600: #855fb1;
@@ -65,6 +66,7 @@ img {
   --number-border-width: 0.0625rem;
   --min-grid-img-size: 9.21875rem;
   --max-grid-size: 70rem;
+  --footer-bg-image: url(assets/mobile/image-footer.jpg);
 }
 
 body {
@@ -197,11 +199,13 @@ main article > * + * {
 }
 
 .call-to-action {
-  background-image: url("assets/mobile/image-footer.jpg");
+  background-image: linear-gradient(
+      var(--cyan-600-transparent),
+      var(--cyan-600-transparent)
+    ),
+    var(--footer-bg-image);
   padding-inline: var(--static-32);
   padding-block: var(--space-64-112);
-  background-color: var(--cyan-600);
-  background-blend-mode: soft-light;
   background-size: cover;
   background-repeat: no-repeat;
   color: var(--white);
@@ -293,7 +297,7 @@ footer .number {
 
 @media (min-width: 48em) {
   .call-to-action {
-    background-image: url("assets/tablet/image-footer.jpg");
+    --footer-bg-image: url("assets/tablet/image-footer.jpg");
   }
 }
 
@@ -327,7 +331,7 @@ footer .number {
   }
 
   .call-to-action {
-    background-image: url("assets/desktop/image-footer.jpg");
+    --footer-bg-image: url("assets/desktop/image-footer.jpg");
     padding-inline: var(--space-132-160);
   }
 

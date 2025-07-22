@@ -68,7 +68,7 @@ The most interesting thing to me was how images loaded with ::before or ::after 
 
 ### Continued development
 
-I am personally still not sure about some best practices in regards to the techniques i employed here. Especially when it comes to images and will do some research. I also experimented with different spacing strategies but defaulted to using flex gap a lot. I personally dont like this that much and will look into alternative strategies. Or at leat put more focus into making repetitive structures like that more reusable.
+I am personally still not sure about some best practices in regards to the techniques I employed here. Especially when it comes to images and will do some research. I also experimented with different spacing strategies but defaulted to using flex gap a lot. I personally dont like this that much and will look into alternative strategies. Or at leat put more focus into making repetitive structures like that more reusable.
 
 ### Useful resources
 
