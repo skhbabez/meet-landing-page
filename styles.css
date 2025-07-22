@@ -27,6 +27,7 @@ img {
 }
 
 :root {
+  --cream: #fafafa;
   --cyan-600: #4d96a9;
   --cyan-300: #8fe3f9;
   --cyan-100: #71c0d4;
@@ -46,6 +47,7 @@ img {
   --space-32-64: clamp(2rem, 0.0916rem + 8.1425vw, 4rem);
   --space-48-80: clamp(3rem, 0.7143rem + 4.7619vw, 5rem);
   --space-48-72: clamp(3rem, 1.5687rem + 6.1069vw, 4.5rem);
+  --space-132-160: clamp(8.25rem, -5.75rem + 17.5vw, 10rem);
   --font-base: "Red Hat Display", sans-serif;
   --font-40-64: clamp(2.5rem, 1.9718rem + 2.2535vw, 4rem);
   --font-32-40: clamp(2rem, 1.8239rem + 0.7512vw, 2.5rem);
@@ -70,6 +72,7 @@ body {
   line-height: 1.5;
   font-size: var(--static-16);
   text-align: center;
+  background-color: var(--cream);
 }
 
 main {
@@ -166,31 +169,6 @@ header {
   aspect-ratio: 820 / 303;
 }
 
-@media (min-width: 1440px) {
-  .hero {
-    flex-direction: row;
-    justify-content: space-between;
-    margin-inline: auto;
-    gap: 0;
-  }
-
-  .hero::before {
-    content: url("assets/desktop/image-hero-left.png");
-    /* we need to reset the mobile before element*/
-    background: none;
-    width: auto;
-    min-inline-size: auto;
-    aspect-ratio: unset;
-    position: relative;
-    left: -2%;
-  }
-  .hero::after {
-    content: url("assets/desktop/image-hero-right.png");
-    position: relative;
-    right: -2%;
-  }
-}
-
 .example-images {
   display: grid;
   grid-template-columns: repeat(
@@ -218,46 +196,30 @@ main article > * + * {
   margin-block-start: var(--static-64);
 }
 
-footer .number {
-  top: 1.75rem;
-}
-
 .call-to-action {
   background-image: url("assets/mobile/image-footer.jpg");
-  padding-inline: var(--space-32-80);
+  padding-inline: var(--static-32);
   padding-block: var(--space-64-112);
   background-color: var(--cyan-600);
   background-blend-mode: soft-light;
   background-size: cover;
   background-repeat: no-repeat;
   color: var(--white);
+}
+
+.call-to-action section {
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
   gap: var(--space-24-32);
+  margin-inline: auto;
 }
 
 .call-to-action :is(h2, p) {
   color: var(--white);
 }
 
-@media (min-width: 768px) {
-  .call-to-action {
-    background-image: url("assets/tablet/image-footer.jpg");
-  }
-}
-
-@media (min-width: 1280px) {
-  .call-to-action {
-    background-image: url("assets/desktop/image-footer.jpg");
-    flex-direction: row;
-    text-align: left;
-  }
-  .call-to-action h2 {
-    max-inline-size: 15ch;
-  }
-}
 /*components*/
 .btn {
   border-radius: var(--corner-radius);
@@ -313,6 +275,10 @@ footer .number {
   top: calc(-1 * var(--number-tail-width));
 }
 
+footer .number {
+  top: 1.75rem;
+}
+
 /*utilities*/
 
 .color-purple-300 {
@@ -321,4 +287,65 @@ footer .number {
 
 .color-cyan-300 {
   color: var(--cyan-300);
+}
+
+/* media queries */
+
+@media (min-width: 48em) {
+  .call-to-action {
+    background-image: url("assets/tablet/image-footer.jpg");
+  }
+}
+
+@media (min-width: 80em) {
+  .hero {
+    flex-direction: row;
+    justify-content: space-between;
+    margin-inline: auto;
+    width: 100%;
+    gap: 0;
+    overflow: hidden;
+    block-size: 30.5rem;
+  }
+
+  .hero::before {
+    content: url("assets/desktop/image-hero-left.png");
+    /* we need to reset the mobile before element*/
+    background: none;
+    width: auto;
+    min-inline-size: auto;
+    aspect-ratio: unset;
+    position: relative;
+    left: -2%;
+    align-self: start;
+  }
+  .hero::after {
+    content: url("assets/desktop/image-hero-right.png");
+    position: relative;
+    right: -2%;
+    align-self: end;
+  }
+
+  .call-to-action {
+    background-image: url("assets/desktop/image-footer.jpg");
+    padding-inline: var(--space-132-160);
+  }
+
+  .call-to-action section {
+    flex-direction: row;
+    align-items: start;
+    justify-content: center;
+    text-align: left;
+  }
+
+  .call-to-action section button {
+    flex-shrink: 0;
+  }
+
+  .call-to-action h2 {
+    max-inline-size: 15ch;
+  }
+  .call-to-action p {
+    max-inline-size: 30ch;
+  }
 }
