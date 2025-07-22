@@ -29,14 +29,14 @@ Users should be able to:
 
 ### Screenshot
 
-![desktop](./screenshots/desktop.png)
-![tablet](./screenshots/tablet.png)
-![mobile](./screenshots/mobile.png)
+![desktop](./screenshots/desktop.jpeg)
+![tablet](./screenshots/tablet.jpeg)
+![mobile](./screenshots/mobile.jpeg)
 
 ### Links
 
-- Solution URL: [Add solution URL here](https://your-solution-url.com)
-- Live Site URL: [Add live site URL here](https://your-live-site-url.com)
+- Solution URL: [https://github.com/skhbabez/meet-landing-page/](https://github.com/skhbabez/meet-landing-page/)
+- Live Site URL: [https://skhbabez.github.io/meet-landing-page/](https://skhbabez.github.io/meet-landing-page/)
 
 ## My process
 

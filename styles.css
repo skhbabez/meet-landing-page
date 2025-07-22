@@ -123,7 +123,7 @@ hgroup p {
   letter-spacing: 4px;
   line-height: 1.1;
   font-size: var(--font-12-16);
-  text-transform: capitalize;
+  text-transform: uppercase;
 }
 
 hgroup > * + * {
