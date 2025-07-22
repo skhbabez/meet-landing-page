@@ -29,15 +29,9 @@ Users should be able to:
 
 ### Screenshot
 
-![](./screenshot.jpg)
-
-Add a screenshot of your solution. The easiest way to do this is to use Firefox to view your project, right-click the page and select "Take a Screenshot". You can choose either a full-height screenshot or a cropped one based on how long the page is. If it's very long, it might be best to crop it.
-
-Alternatively, you can use a tool like [FireShot](https://getfireshot.com/) to take the screenshot. FireShot has a free option, so you don't need to purchase it.
-
-Then crop/optimize/edit your image however you like, add it to your project, and update the file path in the image above.
-
-**Note: Delete this note and the paragraphs above when you add your screenshot. If you prefer not to add a screenshot, feel free to remove this entire section.**
+![desktop](./screenshots/desktop.png)
+![tablet](./screenshots/tablet.png)
+![mobile](./screenshots/mobile.png)
 
 ### Links
 
@@ -53,45 +47,31 @@ Then crop/optimize/edit your image however you like, add it to your project, and
 - Flexbox
 - CSS Grid
 - Mobile-first workflow
-- [React](https://reactjs.org/) - JS library
-- [Next.js](https://nextjs.org/) - React framework
-- [Styled Components](https://styled-components.com/) - For styles
 
 **Note: These are just examples. Delete this note and replace the list above with your own choices**
 
 ### What I learned
 
-Use this section to recap over some of your major learnings while working through this project. Writing these out and providing code samples of areas you want to highlight is a great way to reinforce your own knowledge.
+This was the first project I got to use auto-fit with grid. I also got to experiment around with a bunch of features i otherwise did not ge to use that much like blendmodes, Pseudoelements or positioning utilities. The most fun i had though was to make all the spacings and fonts responsive.
 
-To see how you can add code snippets, see below:
-
-```html
-<h1>Some HTML code I'm proud of</h1>
-```
+The most interesting thing to me was how images loaded with ::before or ::after are not resizable. But yyou can circumvent this by using a background image instead and setting an aspect ratio.
 
 ```css
-.proud-of-this-css {
-  color: papayawhip;
+.hero::before {
+  content: "";
+  background: url("assets/tablet/image-hero.png") no-repeat center / contain;
+  width: 107%;
+  min-inline-size: 27.0625rem;
+  aspect-ratio: 820 / 303;
 }
 ```
 
-```js
-const proudOfThisFunc = () => {
-  console.log("🎉");
-};
-```
-
-If you want more help with writing markdown, we'd recommend checking out [The Markdown Guide](https://www.markdownguide.org/) to learn more.
-
-**Note: Delete this note and the content within this section and replace with your own learnings.**
-
 ### Continued development
 
-Use this section to outline areas that you want to continue focusing on in future projects. These could be concepts you're still not completely comfortable with or techniques you found useful that you want to refine and perfect.
-
-**Note: Delete this note and the content within this section and replace with your own plans for continued development.**
+I am personally still not sure about some best practices in regards to the techniques i employed here. Especially when it comes to images and will do some research. I also experimented with different spacing strategies but defaulted to using flex gap a lot. I personally dont like this that much and will look into alternative strategies. Or at leat put more focus into making repetitive structures like that more reusable.
 
 ### Useful resources
 
 - [Alt text](https://www.searchenginejournal.com/alt-text-for-logos-and-buttons/469801/) - Interesting text on how to label logos.
 - [Utopia](https://utopia.fyi/) - I used their tools to create most of my clamp functions
+  --[https://responsively.app/] - This is such a great app.
